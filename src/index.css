@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors - Primary Palette */
+  --color-core-purple: #771af3;
+  --color-bright-pink: #dd2bc2;
+  --color-muted-purple: #a96bf5;
+  --color-soft-lavender: #e8caf7;
+  --color-strong-blue: #204a9b;
+  --color-dark-gray: #222222;
+  --color-white: #ffffff;
+
+  /* Extended Color Palette - Purple Shades */
+  --color-purple-50: #e8caf7;
+  --color-purple-100: #d1a5f0;
+  --color-purple-200: #ba80e8;
+  --color-purple-300: #a35be1;
+  --color-purple-400: #8c36da;
+  --color-purple-500: #771af3;
+  --color-purple-600: #5f14c2;
+  --color-purple-700: #470e91;
+  --color-purple-800: #2f0860;
+  --color-purple-900: #17022f;
+
+  /* Extended Color Palette - Pink Shades */
+  --color-pink-50: #fce8f7;
+  --color-pink-100: #f9d1ef;
+  --color-pink-200: #f6bae7;
+  --color-pink-300: #f3a3df;
+  --color-pink-400: #f08cd7;
+  --color-pink-500: #dd2bc2;
+  --color-pink-600: #b1229b;
+  --color-pink-700: #851a74;
+  --color-pink-800: #59124d;
+  --color-pink-900: #2d0a26;
+
+  /* Typography */
+  --font-heading: "Poppins", "Inter", "Axiforma", sans-serif;
+  --font-body: "Roboto", "Inter", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Brand Gradients */
+  --gradient-primary: linear-gradient(90deg, #8116ec 0%, #dd2bc2 100%);
+  --gradient-secondary: linear-gradient(90deg, #204a9b 0%, #8116ec 100%);
+
+  /* Shadows */
+  --shadow-card: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  --shadow-button: 0px 2px 4px rgba(119, 26, 243, 0.3);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark-gray);
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: var(--font-weight-bold);
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h4 {
+    font-size: 24px;
+    font-weight: var(--font-weight-medium);
+  }
+
+  h4.page-title {
+    @apply text-2xl font-semibold text-dark-gray mb-2;
+  }
+}
+
+@layer components {
+  /* Brand Buttons */
+  .btn-primary {
+    background-color: var(--color-core-purple);
+    color: var(--color-white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: var(--font-weight-medium);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-button);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-muted-purple);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-bright-pink);
+    border: 2px solid var(--color-bright-pink);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-bright-pink);
+    color: var(--color-white);
+  }
+
+  /* Cards */
+  .card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-bright-pink);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-gradient {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Navigation */
+  .nav-bar {
+    background-color: var(--color-white);
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--color-soft-lavender);
+  }
+
+  .nav-link {
+    color: var(--color-dark-gray);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-core-purple);
+  }
+
+  /* Forms */
+  .form-input {
+    border: 2px solid var(--color-soft-lavender);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    transition: border-color 0.3s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-muted-purple);
+  }
+
+  .form-submit {
+    background-color: var(--color-bright-pink);
+    color: var(--color-white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .form-submit:hover {
+    opacity: 0.9;
+  }
+
+  /* Footer */
+  .footer {
+    background-color: var(--color-core-purple);
+    color: var(--color-white);
+    padding: 32px 24px;
+  }
+
+  /* Text Colors */
+  .text-core-purple {
+    color: var(--color-core-purple);
+  }
+  .text-bright-pink {
+    color: var(--color-bright-pink);
+  }
+  .text-muted-purple {
+    color: var(--color-muted-purple);
+  }
+  .text-soft-lavender {
+    color: var(--color-soft-lavender);
+  }
+  .text-strong-blue {
+    color: var(--color-strong-blue);
+  }
+  .text-dark-gray {
+    color: var(--color-dark-gray);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+
+  /* Background Colors */
+  .bg-core-purple {
+    background-color: var(--color-core-purple);
+  }
+  .bg-bright-pink {
+    background-color: var(--color-bright-pink);
+  }
+  .bg-muted-purple {
+    background-color: var(--color-muted-purple);
+  }
+  .bg-soft-lavender {
+    background-color: var(--color-soft-lavender);
+  }
+  .bg-strong-blue {
+    background-color: var(--color-strong-blue);
+  }
+  .bg-dark-gray {
+    background-color: var(--color-dark-gray);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+
+  /* Gradients */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  /* Shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  /* Links */
+  .link {
+    color: var(--color-core-purple);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .link:hover {
+    color: var(--color-bright-pink);
+  }
+
+  /* Section Background Classes */
+  .section-white {
+    background-color: var(--color-white);
+  }
+  .section-soft-lavender {
+    background-color: var(--color-soft-lavender);
+  }
+  .section-core-purple {
+    background-color: var(--color-core-purple);
+  }
+  .section-bright-pink {
+    background-color: var(--color-bright-pink);
+  }
+  .section-muted-purple {
+    background-color: var(--color-muted-purple);
+  }
+  .section-strong-blue {
+    background-color: var(--color-strong-blue);
+  }
+  .section-dark-gray {
+    background-color: var(--color-dark-gray);
+  }
+
+  /* Gradient sections */
+  .section-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .section-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  /* Container Classes */
+  .section-container {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-padding {
+    padding-top: 4rem; /* py-16 */
+    padding-bottom: 4rem;
+  }
+
+  .section-padding-sm {
+    padding-top: 2rem; /* py-8 */
+    padding-bottom: 2rem;
+  }
+
+  .section-padding-lg {
+    padding-top: 6rem; /* py-24 */
+    padding-bottom: 6rem;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
