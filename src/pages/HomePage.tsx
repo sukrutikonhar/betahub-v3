@@ -9,6 +9,7 @@ import SEO from '../components/SEO';
 import { getSEOConfig } from '../config/seoConfig';
 import ReadingProgress from '../components/ReadingProgress';
 import backgroundImage from '../assets/background.png';
+import agentBgImage from '../assets/agent-bg-3.webp';
 
 export default function HomePage() {
     const [activeCategory, setActiveCategory] = useState('core');
@@ -371,8 +372,8 @@ export default function HomePage() {
                             {/* Feature 1 */}
                             <div className="group p-6 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1" style={{ boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.35) 0px 5px 15px'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                        <Building2 className="w-7 h-7 text-bright-pink" />
+                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <Building2 className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
                                         <p className="text-xl font-normal text-dark-gray leading-tight group-hover:text-bright-pink transition-colors">
@@ -385,8 +386,8 @@ export default function HomePage() {
                             {/* Feature 2 */}
                             <div className="group p-6 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1" style={{ boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.35) 0px 5px 15px'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                        <Rocket className="w-7 h-7 text-bright-pink" />
+                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <Rocket className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
                                         <p className="text-xl font-normal text-dark-gray pe-12 leading-tight group-hover:text-bright-pink transition-colors">
@@ -399,8 +400,8 @@ export default function HomePage() {
                             {/* Feature 3 */}
                             <div className="group p-6 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1" style={{ boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.35) 0px 5px 15px'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                        <Target className="w-7 h-7 text-bright-pink" />
+                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <Target className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
                                         <p className="text-xl font-normal text-dark-gray leading-tight group-hover:text-bright-pink transition-colors">
@@ -609,104 +610,41 @@ export default function HomePage() {
                                     }}
                                     className="pb-12"
                                 >
-                                    {agentCategories.core.agents.map((agent, index) => (
+                                    {agentCategories.core.agents.map((agent) => (
                                         <SwiperSlide key={agent.name}>
-                                            <div className="group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer relative bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-800 h-80 w-full">
+                                            <div className="group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer relative h-80 w-full">
+                                                {/* Background Image */}
+                                                <div className="absolute inset-0 bg-cover bg-center opacity-100" style={{ backgroundImage: `url(${agentBgImage})` }}></div>
+
                                                 {/* Full card shimmer effect on hover */}
                                                 <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30">
                                                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/8 to-transparent -translate-x-full -translate-y-full group-hover:translate-x-full group-hover:translate-y-full transition-transform duration-2500 ease-in-out"></div>
                                                 </div>
 
-                                                {/* Flowing wave lines */}
-                                                <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                                                    <defs>
-                                                        <linearGradient id={`grad1-core-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                                            <stop offset="0%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.6 }} />
-                                                            <stop offset="50%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.6 }} />
-                                                            <stop offset="100%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.6 }} />
-                                                        </linearGradient>
-                                                        <linearGradient id={`grad2-core-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                                            <stop offset="0%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.4 }} />
-                                                            <stop offset="50%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.4 }} />
-                                                            <stop offset="100%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.4 }} />
-                                                        </linearGradient>
-                                                    </defs>
-                                                    <path d="M0,40 Q100,20 200,40 T400,40 T600,40 T800,40" stroke={`url(#grad1-core-${index})`} strokeWidth="2" fill="none" opacity="0.8" />
-                                                    <path d="M0,60 Q100,80 200,60 T400,60 T600,60 T800,60" stroke={`url(#grad2-core-${index})`} strokeWidth="2" fill="none" opacity="0.6" />
-                                                    <path d="M0,80 Q100,60 200,80 T400,80 T600,80 T800,80" stroke={`url(#grad1-core-${index})`} strokeWidth="1.5" fill="none" opacity="0.4" />
-                                                </svg>
-
-                                                {/* Mesh gradient overlay */}
-                                                <div className="absolute inset-0 opacity-20" style={{
-                                                    backgroundImage: `
-                                                        radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
-                                                        radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
-                                                        radial-gradient(circle at 40% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)
-                                                    `
-                                                }}></div>
-
-                                                {/* Particle system */}
-                                                <div className="absolute inset-0 opacity-50">
-                                                    <div className="absolute top-4 left-8 w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ filter: 'blur(2px)' }}></div>
-                                                    <div className="absolute top-8 right-12 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse" style={{ animationDelay: '0.3s', filter: 'blur(2px)' }}></div>
-                                                    <div className="absolute top-12 left-20 w-1 h-1 bg-indigo-300 rounded-full animate-pulse" style={{ animationDelay: '0.7s', filter: 'blur(1.5px)' }}></div>
-                                                </div>
-
-                                                {/* Animated Top Section */}
-                                                <div className="h-20 relative overflow-hidden">
-                                                    {/* Floating orbs */}
-                                                    <div className="absolute inset-0">
-                                                        <div className="absolute top-4 left-8 w-16 h-16 bg-pink-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: `${index * 0.3}s` }}></div>
-                                                        <div className="absolute top-6 right-12 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: `${index * 0.4}s`, animationDuration: '4s' }}></div>
-                                                    </div>
-
-                                                    {/* Sparkles */}
-                                                    <div className="absolute inset-0 opacity-60">
-                                                        <div className="absolute top-8 left-16 w-1 h-1 bg-white rounded-full animate-sparkle" style={{ animationDelay: `${index * 0.2}s` }}></div>
-                                                        <div className="absolute top-4 left-32 w-1 h-1 bg-pink-200 rounded-full animate-sparkle" style={{ animationDelay: `${index * 0.3 + 0.5}s` }}></div>
-                                                    </div>
-                                                </div>
-
                                                 {/* Content Section */}
-                                                <div className="p-6 pt-0 relative z-10">
-                                                    <div className="mb-4">
-                                                        <div className="flex flex-col items-start mb-3">
-                                                            <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/20 text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                                                                {(() => {
-                                                                    const IconComponent = agent.icon;
-                                                                    return <IconComponent className="w-7 h-7" />;
-                                                                })()}
-                                                            </div>
-                                                            <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
-                                                                {agent.name}
-                                                            </h3>
-                                                            <p className="text-sm text-white/70">Core Implementation</p>
+                                                <div className="p-6 relative z-10">
+                                                    <div className="flex flex-col items-start mb-3">
+                                                        <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/20 text-white mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                            {(() => {
+                                                                const IconComponent = agent.icon;
+                                                                return <IconComponent className="w-7 h-7" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 44, 195, 0.8)) drop-shadow(0 0 16px rgba(160, 34, 203, 0.6)) drop-shadow(0 0 24px rgba(123, 27, 241, 0.4))' }} />;
+                                                            })()}
                                                         </div>
+                                                        <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
+                                                            {agent.name}
+                                                        </h3>
+                                                        <p className="text-sm text-white/70 mb-3">Core Implementation</p>
                                                     </div>
 
                                                     {/* Tags */}
-                                                    <div>
-                                                        <div className="flex flex-col gap-2 items-start">
-                                                            {agent.tags.map((tag, idx) => (
-                                                                <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200 inline-block">
-                                                                    {tag}
-                                                                </span>
-                                                            ))}
-                                                        </div>
+                                                    <div className="flex flex-col gap-2 items-start">
+                                                        {agent.tags.map((tag, idx) => (
+                                                            <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200 inline-block">
+                                                                {tag}
+                                                            </span>
+                                                        ))}
                                                     </div>
                                                 </div>
-
-                                                {/* Add keyframe animations */}
-                                                <style>{`
-                                                    @keyframes float {
-                                                        0%, 100% { transform: translateY(0px); }
-                                                        50% { transform: translateY(-10px); }
-                                                    }
-                                                    @keyframes sparkle {
-                                                        0%, 100% { opacity: 0; transform: scale(0); }
-                                                        50% { opacity: 1; transform: scale(1.5); }
-                                                    }
-                                                `}</style>
                                             </div>
                                         </SwiperSlide>
                                     ))}
@@ -732,110 +670,47 @@ export default function HomePage() {
                                         ? 'flex justify-center w-full max-w-full px-8'
                                         : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full max-w-full px-8'
                                     }`}>
-                                    {agentCategories[activeCategory as keyof typeof agentCategories].agents.map((agent, index) => {
+                                    {agentCategories[activeCategory as keyof typeof agentCategories].agents.map((agent) => {
                                         const categoryTitle = agentCategories[activeCategory as keyof typeof agentCategories].title;
                                         const cardHeight = agentCategories[activeCategory as keyof typeof agentCategories].agents.length === 1 ? 'h-96' : 'h-80';
                                         const cardWidth = agentCategories[activeCategory as keyof typeof agentCategories].agents.length === 1 ? 'w-full lg:w-80' : 'w-full';
                                         return (
                                             <div
                                                 key={agent.name}
-                                                className={`group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer relative bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-800 ${cardHeight} ${cardWidth}`}
+                                                className={`group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer relative ${cardHeight} ${cardWidth}`}
                                             >
+                                                {/* Background Image */}
+                                                <div className="absolute inset-0 bg-cover bg-center opacity-100" style={{ backgroundImage: `url(${agentBgImage})` }}></div>
+
                                                 {/* Full card shimmer effect on hover */}
                                                 <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30">
                                                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/8 to-transparent -translate-x-full -translate-y-full group-hover:translate-x-full group-hover:translate-y-full transition-transform duration-2500 ease-in-out"></div>
                                                 </div>
 
-                                                {/* Flowing wave lines */}
-                                                <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                                                    <defs>
-                                                        <linearGradient id={`grad1-${activeCategory}-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                                            <stop offset="0%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.6 }} />
-                                                            <stop offset="50%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.6 }} />
-                                                            <stop offset="100%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.6 }} />
-                                                        </linearGradient>
-                                                        <linearGradient id={`grad2-${activeCategory}-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                                            <stop offset="0%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.4 }} />
-                                                            <stop offset="50%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.4 }} />
-                                                            <stop offset="100%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.4 }} />
-                                                        </linearGradient>
-                                                    </defs>
-                                                    <path d="M0,40 Q100,20 200,40 T400,40 T600,40 T800,40" stroke={`url(#grad1-${activeCategory}-${index})`} strokeWidth="2" fill="none" opacity="0.8" />
-                                                    <path d="M0,60 Q100,80 200,60 T400,60 T600,60 T800,60" stroke={`url(#grad2-${activeCategory}-${index})`} strokeWidth="2" fill="none" opacity="0.6" />
-                                                    <path d="M0,80 Q100,60 200,80 T400,80 T600,80 T800,80" stroke={`url(#grad1-${activeCategory}-${index})`} strokeWidth="1.5" fill="none" opacity="0.4" />
-                                                </svg>
-
-                                                {/* Mesh gradient overlay */}
-                                                <div className="absolute inset-0 opacity-20" style={{
-                                                    backgroundImage: `
-                                                        radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
-                                                        radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
-                                                        radial-gradient(circle at 40% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)
-                                                    `
-                                                }}></div>
-
-                                                {/* Particle system */}
-                                                <div className="absolute inset-0 opacity-50">
-                                                    <div className="absolute top-4 left-8 w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ filter: 'blur(2px)' }}></div>
-                                                    <div className="absolute top-8 right-12 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse" style={{ animationDelay: '0.3s', filter: 'blur(2px)' }}></div>
-                                                    <div className="absolute top-12 left-20 w-1 h-1 bg-indigo-300 rounded-full animate-pulse" style={{ animationDelay: '0.7s', filter: 'blur(1.5px)' }}></div>
-                                                </div>
-
-                                                {/* Animated Top Section */}
-                                                <div className="h-20 relative overflow-hidden">
-                                                    {/* Floating orbs */}
-                                                    <div className="absolute inset-0">
-                                                        <div className="absolute top-4 left-8 w-16 h-16 bg-pink-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: `${index * 0.3}s` }}></div>
-                                                        <div className="absolute top-6 right-12 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: `${index * 0.4}s`, animationDuration: '4s' }}></div>
-                                                    </div>
-
-                                                    {/* Sparkles */}
-                                                    <div className="absolute inset-0 opacity-60">
-                                                        <div className="absolute top-8 left-16 w-1 h-1 bg-white rounded-full animate-sparkle" style={{ animationDelay: `${index * 0.2}s` }}></div>
-                                                        <div className="absolute top-4 left-32 w-1 h-1 bg-pink-200 rounded-full animate-sparkle" style={{ animationDelay: `${index * 0.3 + 0.5}s` }}></div>
-                                                    </div>
-                                                </div>
-
                                                 {/* Content Section */}
-                                                <div className="p-6 pt-0 relative z-10">
-                                                    <div className="mb-4">
-                                                        <div className="flex flex-col items-start mb-3">
-                                                            <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/20 text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                                                                {(() => {
-                                                                    const IconComponent = agent.icon;
-                                                                    return <IconComponent className="w-7 h-7" />;
-                                                                })()}
-                                                            </div>
-                                                            <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
-                                                                {agent.name}
-                                                            </h3>
-                                                            <p className="text-sm text-white/70">{categoryTitle.replace(' Agents', '')}</p>
+                                                <div className="p-6 relative z-10">
+                                                    <div className="flex flex-col items-start mb-3">
+                                                        <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/20 text-white mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                            {(() => {
+                                                                const IconComponent = agent.icon;
+                                                                return <IconComponent className="w-7 h-7" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 44, 195, 0.8)) drop-shadow(0 0 16px rgba(160, 34, 203, 0.6)) drop-shadow(0 0 24px rgba(123, 27, 241, 0.4))' }} />;
+                                                            })()}
                                                         </div>
+                                                        <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
+                                                            {agent.name}
+                                                        </h3>
+                                                        <p className="text-sm text-white/70 mb-3">{categoryTitle.replace(' Agents', '')}</p>
                                                     </div>
 
                                                     {/* Tags */}
-                                                    <div>
-                                                        <div className="flex flex-col gap-2 items-start">
-                                                            {agent.tags.map((tag, idx) => (
-                                                                <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200 inline-block">
-                                                                    {tag}
-                                                                </span>
-                                                            ))}
-                                                        </div>
+                                                    <div className="flex flex-col gap-2 items-start">
+                                                        {agent.tags.map((tag, idx) => (
+                                                            <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200 inline-block">
+                                                                {tag}
+                                                            </span>
+                                                        ))}
                                                     </div>
                                                 </div>
-
-                                                {/* Add keyframe animations */}
-                                                <style>{`
-                                                    @keyframes float {
-                                                        0%, 100% { transform: translateY(0px); }
-                                                        50% { transform: translateY(-10px); }
-                                                    }
-                                                    @keyframes sparkle {
-                                                        0%, 100% { opacity: 0; transform: scale(0); }
-                                                        50% { opacity: 1; transform: scale(1.5); }
-                                                    }
-                                                `}</style>
                                             </div>
                                         );
                                     })}
