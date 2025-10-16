@@ -1,4 +1,4 @@
-import { Bot, Zap, BookOpen, Code, Settings, BarChart3, ArrowRight, Users, Building, TrendingUp, Shield, X } from 'lucide-react';
+import { Bot, ArrowRight, X, Workflow, TestTube, Search, GraduationCap, Cog, Upload, Database, HelpCircle, FileText, Lightbulb, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import DemoForm from '../components/DemoForm';
 import SEO from '../components/SEO';
@@ -13,107 +13,127 @@ export default function AgentsPage() {
   const seoData = getSEOConfig('/agents');
 
   const agents = [
-    // Process Acceleration Agents
+    // Core Implementation Agents
     {
-      name: "ProcessFlow AI",
-      description: "Turn complex business requirements into streamlined BPMN workflows and actionable insights.",
-      industries: ["Manufacturing", "Banking", "Insurance", "Healthcare"],
-      teams: ["Business Analysts", "Process Owners", "IT Transformation"],
-      tags: ["Requirements Gathering", "BPMN process Flow", "Business Analysis"],
-      category: "Process Acceleration",
-      icon: <Zap className="w-6 h-6" />,
+      name: "Flow Agent",
+      description: "Automate complex business processes with intelligent workflow design and optimization.",
+      industries: ["Manufacturing", "Banking", "Insurance", "Healthcare", "Professional Services"],
+      teams: ["Business Analysts", "Process Owners", "IT Transformation", "Operations"],
+      tags: ["Process Flow", "Blueprint Generator"],
+      category: "Core Implementation",
+      icon: <Workflow className="w-6 h-6" />,
       color: "purple"
     },
     {
-      name: "TestForge AI",
-      description: "Accelerate testing cycles with AI-powered test case generation and automation.",
-      industries: ["Technology", "Retail", "Financial Services", "Telecom"],
-      teams: ["QA", "Product Engineering", "DevOps"],
-      tags: ["QA Automation", "Test Management", "Test Case Generation"],
-      category: "Process Acceleration",
-      icon: <Settings className="w-6 h-6" />,
+      name: "TestGen Agent",
+      description: "Generate comprehensive test cases automatically and accelerate your testing cycles.",
+      industries: ["Technology", "Retail", "Financial Services", "Telecom", "SaaS"],
+      teams: ["QA", "Product Engineering", "DevOps", "Testing Teams"],
+      tags: ["Automated Test Case", "Generator"],
+      category: "Core Implementation",
+      icon: <TestTube className="w-6 h-6" />,
       color: "purple"
     },
     {
-      name: "Fit-Gap AI",
-      description: "Identify ERP gaps and align processes to maximize system efficiency.",
-      industries: ["Manufacturing", "Distribution", "Retail", "Pharma"],
-      teams: ["ERP Implementation", "Consulting", "CIO Office"],
-      tags: ["ERP Assessment", "Process Alignment", "Gap Analysis"],
-      category: "Process Acceleration",
-      icon: <BarChart3 className="w-6 h-6" />,
+      name: "FitCheck Agent",
+      description: "Analyze system readiness and identify gaps for seamless enterprise implementations.",
+      industries: ["Manufacturing", "Distribution", "Retail", "Pharma", "Financial Services"],
+      teams: ["ERP Implementation", "Consulting", "CIO Office", "IT Strategy"],
+      tags: ["Fit-Gap", "Readiness Analyzer"],
+      category: "Core Implementation",
+      icon: <Search className="w-6 h-6" />,
       color: "purple"
     },
     {
-      name: "Config AI",
-      description: "Simplify Dynamics 365 setup and automate workflows for faster CRM adoption.",
-      industries: ["Professional Services", "Retail", "Financial Services"],
-      teams: ["CRM Admins", "Sales Ops", "IT Transformation"],
-      tags: ["CRM Setup", "Dynamics 365", "Workflow Automation"],
-      category: "Process Acceleration",
-      icon: <Building className="w-6 h-6" />,
+      name: "LearnX Agent",
+      description: "Create engaging learning experiences with gamified training and podcast content.",
+      industries: ["Education", "IT Services", "Consulting", "Healthcare", "Corporate Training"],
+      teams: ["HR", "L&D", "Onboarding", "Training Managers", "Content Teams"],
+      tags: ["Training", "Podcast", "Gamified Learning"],
+      category: "Core Implementation",
+      icon: <GraduationCap className="w-6 h-6" />,
       color: "purple"
     },
-    // Knowledge & Training Agents
     {
-      name: "SkillForgeX",
-      description: "Transform knowledge into engaging, interactive learning experiences.",
-      industries: ["Education", "IT Services", "Consulting", "Healthcare"],
-      teams: ["HR", "L&D", "Onboarding", "Training Managers"],
-      tags: ["Training Documentation", "Knowledge Transfer", "Interactive Learning"],
-      category: "Knowledge & Training",
-      icon: <BookOpen className="w-6 h-6" />,
+      name: "Configuration Agent",
+      description: "Automate system configuration for D365 and industry-specific CRM solutions.",
+      industries: ["Professional Services", "Retail", "Financial Services", "Healthcare", "Manufacturing"],
+      teams: ["CRM Admins", "Sales Ops", "IT Transformation", "System Administrators"],
+      tags: ["Auto-Configurator", "D365", "Industry CRM"],
+      category: "Core Implementation",
+      icon: <Cog className="w-6 h-6" />,
+      color: "purple"
+    },
+    {
+      name: "Release Agent",
+      description: "Streamline deployment processes with automated release management and regression testing.",
+      industries: ["Technology", "SaaS", "Financial Services", "Healthcare", "E-commerce"],
+      teams: ["DevOps", "Release Management", "QA", "Engineering"],
+      tags: ["Automated Release", "Regression Framework"],
+      category: "Core Implementation",
+      icon: <Upload className="w-6 h-6" />,
+      color: "purple"
+    },
+    {
+      name: "Data Migration Agent",
+      description: "Seamlessly migrate data between systems with intelligent schema mapping and validation.",
+      industries: ["Technology", "Financial Services", "Healthcare", "Manufacturing", "Retail"],
+      teams: ["Data Engineering", "IT Infrastructure", "Database Administrators", "Migration Teams"],
+      tags: ["Schema Mapping", "Migration Accelerator"],
+      category: "Core Implementation",
+      icon: <Database className="w-6 h-6" />,
+      color: "purple"
+    },
+    // Knowledge & Support Agents
+    {
+      name: "AnswerX Agent",
+      description: "Provide instant, accurate answers from your enterprise knowledge base with AI-powered search.",
+      industries: ["Legal", "Healthcare", "Consulting", "Support Services", "Financial Services"],
+      teams: ["Knowledge Management", "AI Ops", "Research", "IT Support", "Customer Service"],
+      tags: ["Enterprise Q&A", "Knowledge Search"],
+      category: "Knowledge & Support",
+      icon: <Search className="w-6 h-6" />,
       color: "pink"
     },
     {
-      name: "RetrievX",
-      description: "Deliver instant, context-aware answers with AI-powered knowledge retrieval.",
-      industries: ["Legal", "Healthcare", "Consulting", "Support Services"],
-      teams: ["Knowledge Management", "AI Ops", "Research", "IT Support"],
-      tags: ["Knowledge Base Search", "Contextual AI", "Information Retrieval"],
-      category: "Knowledge & Training",
-      icon: <Bot className="w-6 h-6" />,
+      name: "HelpDesk Agent",
+      description: "Automate IT support and customer service with intelligent ticketing and resolution systems.",
+      industries: ["SaaS", "Telecom", "Retail", "IT Services", "Healthcare"],
+      teams: ["IT Helpdesk", "Customer Service", "Support Operations", "Technical Support"],
+      tags: ["IT Support", "Customer Support", "Chatbot"],
+      category: "Knowledge & Support",
+      icon: <HelpCircle className="w-6 h-6" />,
       color: "pink"
     },
     {
-      name: "HelpDeskX",
-      description: "Automate ticketing, incident management, and support with AI-driven efficiency.",
-      industries: ["SaaS", "Telecom", "Retail", "IT Services"],
-      teams: ["IT Helpdesk", "Customer Service", "Support Operations"],
-      tags: ["Ticket Management", "Incident Resolution", "Support Automation"],
-      category: "Knowledge & Training",
-      icon: <Users className="w-6 h-6" />,
+      name: "DocuCode Agent",
+      description: "Generate comprehensive technical documentation and provide intelligent code assistance.",
+      industries: ["Software Development", "IT Services", "Startups", "Technology", "Consulting"],
+      teams: ["Developers", "Engineering", "DevOps", "Documentation Teams", "Technical Writers"],
+      tags: ["Technical Documentation", "Code Companion"],
+      category: "Knowledge & Support",
+      icon: <FileText className="w-6 h-6" />,
       color: "pink"
     },
-    // Code & Technical Intelligence Agents
     {
-      name: "CodeDocIQ",
-      description: "Auto-generate documentation and boost developer productivity instantly.",
-      industries: ["Software Development", "IT Services", "Startups"],
-      teams: ["Developers", "Engineering", "DevOps", "Documentation Teams"],
-      tags: ["Auto Documentation", "Developer Productivity", "Code Analysis"],
-      category: "Code & Technical",
-      icon: <Code className="w-6 h-6" />,
-      color: "blue"
+      name: "InsightX Agent",
+      description: "Transform data into actionable business insights with advanced analytics and reporting.",
+      industries: ["Consulting", "Financial Services", "Tech", "Market Research", "Healthcare"],
+      teams: ["Strategy", "Product Marketing", "Business Analysts", "Data Science", "Research"],
+      tags: ["Analytical", "Insight Generation"],
+      category: "Knowledge & Support",
+      icon: <Lightbulb className="w-6 h-6" />,
+      color: "pink"
     },
+    // CX & Experience Agents
     {
-      name: "ResolvIQ",
-      description: "Turn data into competitive insights with AI-powered market intelligence.",
-      industries: ["Consulting", "Financial Services", "Tech", "Market Research"],
-      teams: ["Strategy", "Product Marketing", "Business Analysts"],
-      tags: ["Market Intelligence", "Competitive Analysis", "Data Insights"],
-      category: "Code & Technical",
-      icon: <TrendingUp className="w-6 h-6" />,
-      color: "blue"
-    },
-    {
-      name: "FinOptima IQ",
-      description: "Optimize cloud spend and track budgets with AI-driven financial intelligence.",
-      industries: ["SaaS", "Cloud Providers", "FinTech", "Enterprises"],
-      teams: ["Finance", "CloudOps", "IT Infrastructure", "CIO Office"],
-      tags: ["Cost Optimization", "Budget Tracking", "Financial Analysis"],
-      category: "Code & Technical",
-      icon: <Shield className="w-6 h-6" />,
+      name: "CX & Support Bots",
+      description: "Create custom chatbots and support solutions tailored to your customer experience needs.",
+      industries: ["E-commerce", "Retail", "Financial Services", "Healthcare", "SaaS"],
+      teams: ["Customer Experience", "Marketing", "Support Operations", "Product Teams"],
+      tags: ["Custom Chatbots", "CX", "Service", "IT Helpdesks"],
+      category: "CX & Experience",
+      icon: <MessageSquare className="w-6 h-6" />,
       color: "blue"
     }
   ];
@@ -298,52 +318,134 @@ export default function AgentsPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {filteredAgents.map((agent, index) => (
-                  <div key={index} className="group rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer relative overflow-hidden" style={{
-                    background: 'linear-gradient(135deg, #1e1e1e 0%, #3c1470 50%, #5a2a8a 100%)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-                  }}>
-                    {/* Agent Header */}
-                    <div className="mb-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/20 text-white">
-                          {agent.icon}
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
-                            {agent.name}
-                          </h3>
-                          <p className="text-sm text-white/70">{agent.category}</p>
-                        </div>
-                      </div>
-                      <p className="text-sm text-white/80 leading-relaxed">
-                        {agent.description}
-                      </p>
+                  <div key={index} className="group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer relative bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-800">
+                    {/* Full card shimmer effect on hover */}
+                    <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30">
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/8 to-transparent -translate-x-full -translate-y-full group-hover:translate-x-full group-hover:translate-y-full transition-transform duration-2500 ease-in-out"></div>
                     </div>
 
-                    {/* Tags */}
-                    <div className="mb-6">
-                      <div className="flex flex-wrap gap-2">
-                        {agent.tags.map((tag, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200">
-                            {tag}
-                          </span>
-                        ))}
+                    {/* Flowing wave lines */}
+                    <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id={`grad1-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.6 }} />
+                          <stop offset="50%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.6 }} />
+                          <stop offset="100%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.6 }} />
+                        </linearGradient>
+                        <linearGradient id={`grad2-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.4 }} />
+                          <stop offset="50%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.4 }} />
+                          <stop offset="100%" style={{ stopColor: 'rgb(168, 85, 247)', stopOpacity: 0.4 }} />
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,40 Q100,20 200,40 T400,40 T600,40 T800,40" stroke={`url(#grad1-${index})`} strokeWidth="2" fill="none" opacity="0.8" />
+                      <path d="M0,60 Q100,80 200,60 T400,60 T600,60 T800,60" stroke={`url(#grad2-${index})`} strokeWidth="2" fill="none" opacity="0.6" />
+                      <path d="M0,80 Q100,60 200,80 T400,80 T600,80 T800,80" stroke={`url(#grad1-${index})`} strokeWidth="1.5" fill="none" opacity="0.4" />
+                      <path d="M0,100 Q100,120 200,100 T400,100 T600,100 T800,100" stroke={`url(#grad2-${index})`} strokeWidth="1" fill="none" opacity="0.3" />
+                    </svg>
+
+                    {/* Mesh gradient overlay */}
+                    <div className="absolute inset-0 opacity-20" style={{
+                      backgroundImage: `
+                          radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
+                          radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
+                          radial-gradient(circle at 40% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)
+                        `
+                    }}></div>
+
+                    {/* Particle system with blur */}
+                    <div className="absolute inset-0 opacity-50">
+                      <div className="absolute top-4 left-8 w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ filter: 'blur(2px)' }}></div>
+                      <div className="absolute top-8 right-12 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse" style={{ animationDelay: '0.3s', filter: 'blur(2px)' }}></div>
+                      <div className="absolute top-12 left-20 w-1 h-1 bg-indigo-300 rounded-full animate-pulse" style={{ animationDelay: '0.7s', filter: 'blur(1.5px)' }}></div>
+                      <div className="absolute top-6 right-24 w-2 h-2 bg-pink-300 rounded-full animate-pulse" style={{ animationDelay: '1s', filter: 'blur(2px)' }}></div>
+                      <div className="absolute top-14 left-32 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1.3s', filter: 'blur(2px)' }}></div>
+                      <div className="absolute top-10 right-36 w-1 h-1 bg-indigo-400 rounded-full animate-pulse" style={{ animationDelay: '1.6s', filter: 'blur(1.5px)' }}></div>
+                    </div>
+
+                    {/* Light streaks with blur */}
+                    <div className="absolute inset-0 opacity-20">
+                      <div className="absolute top-2 -left-10 w-40 h-0.5 bg-gradient-to-r from-transparent via-pink-400 to-transparent transform rotate-12" style={{ filter: 'blur(1px)' }}></div>
+                      <div className="absolute top-6 right-0 w-32 h-0.5 bg-gradient-to-l from-transparent via-purple-400 to-transparent transform -rotate-12" style={{ filter: 'blur(1px)' }}></div>
+                      <div className="absolute top-10 left-10 w-36 h-0.5 bg-gradient-to-r from-transparent via-indigo-400 to-transparent transform rotate-6" style={{ filter: 'blur(1px)' }}></div>
+                    </div>
+
+                    {/* Animated Top Section */}
+                    <div className="h-20 relative overflow-hidden">
+                      {/* Floating orbs */}
+                      <div className="absolute inset-0">
+                        <div className="absolute top-4 left-8 w-16 h-16 bg-pink-500/20 rounded-full blur-xl animate-float"
+                          style={{ animationDelay: `${index * 0.3}s` }}></div>
+                        <div className="absolute top-6 right-12 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-float"
+                          style={{ animationDelay: `${index * 0.4}s`, animationDuration: '4s' }}></div>
+                        <div className="absolute top-2 right-24 w-12 h-12 bg-indigo-500/20 rounded-full blur-lg animate-float"
+                          style={{ animationDelay: `${index * 0.5}s`, animationDuration: '5s' }}></div>
+                      </div>
+
+                      {/* Sparkles */}
+                      <div className="absolute inset-0 opacity-60">
+                        <div className="absolute top-8 left-16 w-1 h-1 bg-white rounded-full animate-sparkle"
+                          style={{ animationDelay: `${index * 0.2}s` }}></div>
+                        <div className="absolute top-4 left-32 w-1 h-1 bg-pink-200 rounded-full animate-sparkle"
+                          style={{ animationDelay: `${index * 0.3 + 0.5}s` }}></div>
+                        <div className="absolute top-12 right-20 w-1 h-1 bg-purple-200 rounded-full animate-sparkle"
+                          style={{ animationDelay: `${index * 0.4 + 1}s` }}></div>
+                        <div className="absolute top-6 right-32 w-1 h-1 bg-white rounded-full animate-sparkle"
+                          style={{ animationDelay: `${index * 0.5 + 1.5}s` }}></div>
                       </div>
                     </div>
+
+                    {/* Content Section */}
+                    <div className="p-6 pt-0 relative z-10">
+                      {/* Agent Header */}
+                      <div className="mb-4">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/20 text-white">
+                            {agent.icon}
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
+                              {agent.name}
+                            </h3>
+                            <p className="text-sm text-white/70">{agent.category}</p>
+                          </div>
+                        </div>
+                        <p className="text-sm text-white/80 leading-relaxed">
+                          {agent.description}
+                        </p>
+                      </div>
+
+                      {/* Tags */}
+                      <div>
+                        <div className="flex flex-wrap gap-2">
+                          {agent.tags.map((tag, idx) => (
+                            <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Add keyframe animations */}
+                    <style>{`
+                      @keyframes shimmer {
+                        0% { transform: translateX(-100%); }
+                        100% { transform: translateX(100%); }
+                      }
+                      @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-10px); }
+                      }
+                      @keyframes sparkle {
+                        0%, 100% { opacity: 0; transform: scale(0); }
+                        50% { opacity: 1; transform: scale(1.5); }
+                      }
+                    `}</style>
                   </div>
                 ))}
-              </div>
-
-              {/* Book a Demo Button */}
-              <div className="flex justify-center mt-12">
-                <button
-                  onClick={() => setShowDemoForm(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-bold rounded-2xl hover:from-purple-700 hover:to-purple-900 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  Book a Demo
-                </button>
               </div>
 
               {filteredAgents.length === 0 && (
@@ -370,7 +472,7 @@ export default function AgentsPage() {
       <section className="w-full relative overflow-hidden bg-white">
         <div className="section-container section-padding">
           <div className="max-w-5xl mx-auto">
-            <div className="rounded-3xl p-12 text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+            <div className="rounded-3xl p-12 text-center relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
               {/* Background decorative elements */}
               <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>

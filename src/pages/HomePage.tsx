@@ -851,7 +851,7 @@ export default function HomePage() {
 
                 <div className="section-container py-16 relative z-10">
                     {/* Sleek CTA Block */}
-                    <div className="rounded-2xl p-10 relative overflow-hidden shadow-xl max-w-4xl mx-auto bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 border border-white/10">
+                    <div className="rounded-2xl p-10 relative overflow-hidden shadow-xl max-w-4xl mx-auto bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 border border-white/10">
                         {/* Minimal Background Elements */}
                         <div className="absolute inset-0 overflow-hidden">
                             <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-pink-500/15 to-purple-500/15 rounded-full blur-2xl"></div>

@@ -281,7 +281,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #DD2BC2 100%)' }}>
+      <section className="w-full relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>

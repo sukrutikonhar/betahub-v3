@@ -340,7 +340,7 @@ export default function ContactPage() {
 
                     {/* CTA Block */}
                     <div className="max-w-5xl mx-auto mt-16">
-                        <div className="rounded-3xl p-12 text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+                        <div className="rounded-3xl p-12 text-center relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
                             {/* Background decorative elements */}
                             <div className="absolute inset-0 overflow-hidden">
                                 <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
