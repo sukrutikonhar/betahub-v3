@@ -82,7 +82,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                         {/* Contact Sales */}
                         <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
                                 <Phone className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Contact Sales</h3>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                             <button
                                 onClick={() => window.location.href = 'mailto:sales@betahub.com'}
                                 className="w-full text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 shadow-lg hover:opacity-90 cursor-pointer"
-                                style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}
+                                style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
                             >
                                 Contact Sales
                             </button>
@@ -100,7 +100,7 @@ export default function ContactPage() {
 
                         {/* Watch Product Tour */}
                         <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
                                 <ArrowRight className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Watch Product Tour</h3>
@@ -110,14 +110,14 @@ export default function ContactPage() {
                             <button
                                 onClick={() => window.location.href = '/agents'}
                                 className="w-full border-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
-                                style={{ borderColor: '#3c1470', color: '#3c1470' }}
+                                style={{ borderColor: '#DA2CC3', color: '#DA2CC3' }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)';
+                                    e.currentTarget.style.background = 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)';
                                     e.currentTarget.style.color = 'white';
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.background = 'transparent';
-                                    e.currentTarget.style.color = '#3c1470';
+                                    e.currentTarget.style.color = '#DA2CC3';
                                 }}
                             >
                                 Watch Product Tour
@@ -126,7 +126,7 @@ export default function ContactPage() {
 
                         {/* Book a Demo */}
                         <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
                                 <Clock className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Book a Demo</h3>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                             <button
                                 onClick={() => setShowDemoForm(true)}
                                 className="w-full text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 shadow-lg hover:opacity-90 cursor-pointer"
-                                style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}
+                                style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
                             >
                                 Book a Demo
                             </button>
@@ -144,7 +144,7 @@ export default function ContactPage() {
 
                         {/* Get Support */}
                         <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
                                 <Mail className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Get Support</h3>
@@ -154,14 +154,14 @@ export default function ContactPage() {
                             <button
                                 onClick={() => window.location.href = 'mailto:support@betahub.com'}
                                 className="w-full border-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
-                                style={{ borderColor: '#3c1470', color: '#3c1470' }}
+                                style={{ borderColor: '#DA2CC3', color: '#DA2CC3' }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)';
+                                    e.currentTarget.style.background = 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)';
                                     e.currentTarget.style.color = 'white';
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.background = 'transparent';
-                                    e.currentTarget.style.color = '#3c1470';
+                                    e.currentTarget.style.color = '#DA2CC3';
                                 }}
                             >
                                 Get Support
@@ -315,7 +315,7 @@ export default function ContactPage() {
                                         <button
                                             type="submit"
                                             className="text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto shadow-lg hover:opacity-90"
-                                            style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}
+                                            style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
                                         >
                                             Send Message
                                             <ArrowRight className="w-5 h-5" />

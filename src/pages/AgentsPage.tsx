@@ -209,17 +209,14 @@ export default function AgentsPage() {
                   }
                 }}
                 className="group text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 hover:opacity-90 cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
               >
                 <span>Explore Agents</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button
                 onClick={() => setShowDemoForm(true)}
-                className="group border-2 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 hover:opacity-90 cursor-pointer"
-                style={{ borderColor: '#3c1470', color: '#3c1470' }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)'; e.currentTarget.style.color = 'white'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#3c1470'; }}
+                className="group border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 hover:opacity-90 cursor-pointer"
               >
                 <span>Book a Demo</span>
                 <Bot className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
@@ -401,16 +398,14 @@ export default function AgentsPage() {
                     <div className="p-6 pt-0 relative z-10">
                       {/* Agent Header */}
                       <div className="mb-4">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/20 text-white">
+                        <div className="flex flex-col items-start mb-3">
+                          <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/20 text-white mb-3 group-hover:scale-110 transition-transform duration-300">
                             {agent.icon}
                           </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
-                              {agent.name}
-                            </h3>
-                            <p className="text-sm text-white/70">{agent.category}</p>
-                          </div>
+                          <h3 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
+                            {agent.name}
+                          </h3>
+                          <p className="text-sm text-white/70 mb-2">{agent.category}</p>
                         </div>
                         <p className="text-sm text-white/80 leading-relaxed">
                           {agent.description}
@@ -419,9 +414,9 @@ export default function AgentsPage() {
 
                       {/* Tags */}
                       <div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-col gap-2 items-start">
                           {agent.tags.map((tag, idx) => (
-                            <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200">
+                            <span key={idx} className="px-3 py-1 bg-white/20 text-white text-xs rounded-full hover:bg-white/30 transition-all duration-200 inline-block">
                               {tag}
                             </span>
                           ))}
@@ -491,7 +486,8 @@ export default function AgentsPage() {
                 <div className="flex justify-center items-center">
                   <button
                     onClick={() => window.location.href = '/contact'}
-                    className="group bg-white text-purple-800 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 min-w-[200px] justify-center cursor-pointer"
+                    className="group text-white px-10 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 min-w-[200px] justify-center cursor-pointer"
+                    style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
                   >
                     <span>Contact Sales</span>
                     <Bot className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />

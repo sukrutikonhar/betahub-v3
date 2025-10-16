@@ -245,7 +245,7 @@ const GartnerPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         {actionCards.map((card, index) => (
-                            <div key={index} className="group rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-300/50 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}>
+                            <div key={index} className="group rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-300/50 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
                                 {/* Background decorative element */}
                                 <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-full blur-2xl -translate-y-12 sm:-translate-y-16 translate-x-12 sm:translate-x-16"></div>
 
@@ -379,7 +379,7 @@ const GartnerPage: React.FC = () => {
                                     <button
                                         onClick={() => window.open('https://www.addevent.com/event/HC26969163', '_blank')}
                                         className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:opacity-90 cursor-pointer text-sm sm:text-base"
-                                        style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}
+                                        style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
                                     >
                                         <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                                         Add to Calendar
@@ -387,14 +387,14 @@ const GartnerPage: React.FC = () => {
                                     <button
                                         onClick={() => window.location.href = 'https://www.gartner.com/en/conferences/emea/symposium'}
                                         className="border-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-sm sm:text-base"
-                                        style={{ borderColor: '#3c1470', color: '#3c1470' }}
+                                        style={{ borderColor: '#DA2CC3', color: '#DA2CC3' }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.background = 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)';
+                                            e.currentTarget.style.background = 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)';
                                             e.currentTarget.style.color = 'white';
                                         }}
                                         onMouseLeave={(e) => {
                                             e.currentTarget.style.background = 'transparent';
-                                            e.currentTarget.style.color = '#3c1470';
+                                            e.currentTarget.style.color = '#DA2CC3';
                                         }}
                                     >
                                         <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
