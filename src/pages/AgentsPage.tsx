@@ -1,4 +1,4 @@
-import { Bot, ArrowRight, X, Workflow, TestTube, Search, GraduationCap, Cog, Upload, Database, HelpCircle, FileText, Lightbulb, MessageSquare } from 'lucide-react';
+import { Bot, X, Workflow, TestTube, Search, GraduationCap, Cog, Upload, Database, HelpCircle, FileText, Lightbulb, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import DemoForm from '../components/DemoForm';
 import SEO from '../components/SEO';

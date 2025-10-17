@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Star, Zap, Users, Building2, Crown, MessageCircle } from 'lucide-react';
+import { ArrowRight, Check, Star, Zap, Building2, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
