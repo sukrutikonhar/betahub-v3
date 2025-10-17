@@ -39,7 +39,7 @@ export default function AboutPage() {
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Adoption Over Hype",
-      description: "Success is not a mere demo. Success is when your entire organization uses agents every day."
+      description: "Success is not a mere demo. Success is when your entire organization uses agents to get things done."
     },
     {
       icon: <Target className="w-8 h-8" />,
@@ -293,7 +293,7 @@ export default function AboutPage() {
         <div className="section-container section-padding relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Let's build the agents that will power your enterprise success.
+              We build the agents that will power your enterprise success.
             </h2>
             <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Ready to transform your business with AI agents that actually work?

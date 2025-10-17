@@ -66,9 +66,9 @@ const CookiePolicyPage: React.FC = () => {
                                     For the purposes of this Cookie Policy:
                                 </p>
                                 <ul className="list-disc pl-6 mb-6 space-y-2" style={{ color: '#60697b' }}>
-                                    <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Cookie Policy) refers to Beta Hub.ai.</li>
+                                    <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Cookie Policy) refers to Beta Hub.</li>
                                     <li><strong>Cookies</strong> means small files that are placed on Your computer, mobile device or any other device by a website, containing your browsing history on that website among its many uses.</li>
-                                    <li><strong>Website</strong> refers to Beta Hub.ai, accessible from https://www.betahub.ai</li>
+                                    <li><strong>Website</strong> refers to Beta Hub, accessible from https://www.betahub.ai</li>
                                     <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
                                 </ul>
                             </div>

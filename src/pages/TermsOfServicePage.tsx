@@ -39,10 +39,10 @@ const TermsOfServicePage: React.FC = () => {
                             {/* Introduction */}
                             <div className="mb-12">
                                 <p className="text-lg leading-relaxed mb-6" style={{ color: '#60697b' }}>
-                                    Welcome to Beta Hub.ai! These terms and conditions outline the rules and regulations for the use of Beta Hub.ai's Website, located at https://www.betahub.ai.
+                                    Welcome to Beta Hub! These terms and conditions outline the rules and regulations for the use of Beta Hub's Website, located at https://www.betahub.ai.
                                 </p>
                                 <p className="text-lg leading-relaxed" style={{ color: '#60697b' }}>
-                                    By accessing this website we assume you accept these terms and conditions. Do not continue to use Beta Hub.ai if you do not agree to take all of the terms and conditions stated on this page.
+                                    By accessing this website we assume you accept these terms and conditions. Do not continue to use Beta Hub if you do not agree to take all of the terms and conditions stated on this page.
                                 </p>
                             </div>
 
@@ -53,7 +53,7 @@ const TermsOfServicePage: React.FC = () => {
                                     Cookies
                                 </h2>
                                 <p className="text-lg leading-relaxed mb-4" style={{ color: '#60697b' }}>
-                                    We employ the use of cookies. By accessing Beta Hub.ai, you agreed to use cookies in agreement with the Beta Hub.ai's Privacy Policy.
+                                    We employ the use of cookies. By accessing Beta Hub, you agreed to use cookies in agreement with Beta Hub's Privacy Policy.
                                 </p>
                                 <p className="text-lg leading-relaxed mb-4" style={{ color: '#60697b' }}>
                                     Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
@@ -67,17 +67,17 @@ const TermsOfServicePage: React.FC = () => {
                                     License
                                 </h2>
                                 <p className="text-lg leading-relaxed mb-4" style={{ color: '#60697b' }}>
-                                    Unless otherwise stated, Beta Hub.ai and/or its licensors own the intellectual property rights for all material on Beta Hub.ai. All intellectual property rights are reserved. You may access this from Beta Hub.ai for your own personal use subjected to restrictions set in these terms and conditions.
+                                    Unless otherwise stated, Beta Hub and/or its licensors own the intellectual property rights for all material on Beta Hub. All intellectual property rights are reserved. You may access this from Beta Hub for your own personal use subjected to restrictions set in these terms and conditions.
                                 </p>
 
                                 <p className="text-lg leading-relaxed mb-4" style={{ color: '#60697b' }}>
                                     You must not:
                                 </p>
                                 <ul className="list-disc pl-6 mb-6 space-y-2" style={{ color: '#60697b' }}>
-                                    <li>Republish material from Beta Hub.ai</li>
-                                    <li>Sell, rent or sub-license material from Beta Hub.ai</li>
-                                    <li>Reproduce, duplicate or copy material from Beta Hub.ai</li>
-                                    <li>Redistribute content from Beta Hub.ai</li>
+                                    <li>Republish material from Beta Hub</li>
+                                    <li>Sell, rent or sub-license material from Beta Hub</li>
+                                    <li>Reproduce, duplicate or copy material from Beta Hub</li>
+                                    <li>Redistribute content from Beta Hub</li>
                                 </ul>
 
                                 <p className="text-lg leading-relaxed" style={{ color: '#60697b' }}>

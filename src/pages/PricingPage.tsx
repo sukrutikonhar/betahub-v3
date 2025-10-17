@@ -181,15 +181,6 @@ export default function PricingPage() {
                                             </div>
                                         </div>
 
-                                        {/* Features */}
-                                        <div className="space-y-3 mb-8">
-                                            {plan.features.map((feature, index) => (
-                                                <div key={index} className="flex items-center gap-3">
-                                                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                                                    <span className="text-sm text-gray-600">{feature}</span>
-                                                </div>
-                                            ))}
-                                        </div>
 
                                         {/* CTA Button */}
                                         <button
@@ -254,9 +245,6 @@ export default function PricingPage() {
                             </button>
                         </div>
 
-                        <p className="text-white/70 text-sm mt-6">
-                            *The above pricing applies to Beta Hub's ready-to-use agents. Custom solutions are priced separately based on mutually agreed quotations. All prices are exclusive of applicable taxes.
-                        </p>
                     </div>
                 </div>
             </section>
