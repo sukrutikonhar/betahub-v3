@@ -139,14 +139,14 @@ export default function PricingPage() {
                                     <div className={`absolute inset-0 bg-gradient-to-br ${plan.bgGradient} opacity-50`}></div>
 
                                     {/* Popular Badge */}
-                                    {plan.popular && (
+                                    {/* {plan.popular && (
                                         <div className="absolute top-6 right-6 z-10">
                                             <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
                                                 <Star className="w-3 h-3" />
                                                 Most Popular
                                             </div>
                                         </div>
-                                    )}
+                                    )} */}
 
                                     {/* Card Content */}
                                     <div className="relative z-10 p-8">
@@ -222,7 +222,7 @@ export default function PricingPage() {
                         </div>
 
                         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                            Need Something Custom?
+                            Need Custom Solutions?
                         </h2>
 
                         <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">

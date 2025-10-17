@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { ROUTES, ROUTE_LABELS } from "../router/routes";
-import { Mail, ArrowRight, Linkedin, Send } from "lucide-react";
+import { Mail, ArrowRight, Linkedin, Send, AlertCircle } from "lucide-react";
 import { useState } from "react";
+import { WEB3FORMS_CONFIG } from "../config/web3forms";
 
 export default function Footer() {
     const [email, setEmail] = useState("");
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const quickLinks = [
         { path: ROUTES.ABOUT, label: ROUTE_LABELS[ROUTES.ABOUT] },
@@ -20,13 +23,46 @@ export default function Footer() {
         { label: "Cookie Policy", path: ROUTES.COOKIE_POLICY },
     ];
 
-    const handleNewsletterSubmit = (e: React.FormEvent) => {
+    const handleNewsletterSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (email) {
-            setIsSubscribed(true);
-            setEmail("");
-            // Here you would typically send the email to your backend
-            setTimeout(() => setIsSubscribed(false), 3000);
+        if (!email) return;
+
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch(WEB3FORMS_CONFIG.API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_CONFIG.NEWSLETTER_ACCESS_KEY,
+                    subject: 'Newsletter Subscription - Beta Hub',
+                    from_email: email,
+                    message: `Newsletter subscription request from: ${email}`,
+                    replyto: email,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setIsSubscribed(true);
+                setEmail("");
+                setTimeout(() => {
+                    setIsSubscribed(false);
+                    setSubmitStatus('idle');
+                }, 5000);
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Newsletter subscription error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -113,22 +149,38 @@ export default function Footer() {
                                 <p className="text-green-400 font-medium">Thank you for subscribing!</p>
                             </div>
                         ) : (
-                            <form onSubmit={handleNewsletterSubmit} className="relative">
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter your email id"
-                                    className="w-full px-4 py-3 pr-12 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bright-pink focus:border-transparent"
-                                    required
-                                />
-                                <button
-                                    type="submit"
-                                    className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-bright-pink to-core-purple text-white rounded-md hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
-                                >
-                                    <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                                </button>
-                            </form>
+                            <>
+                                {/* Status Messages */}
+                                {submitStatus === 'error' && (
+                                    <div className="mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center gap-2">
+                                        <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
+                                        <p className="text-red-400 text-sm">Failed to subscribe. Please try again.</p>
+                                    </div>
+                                )}
+
+                                <form onSubmit={handleNewsletterSubmit} className="relative">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="Enter your email id"
+                                        disabled={isSubmitting}
+                                        className="w-full px-4 py-3 pr-12 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bright-pink focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                                        required
+                                    />
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-bright-pink to-core-purple text-white rounded-md hover:shadow-lg transition-all duration-300 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        {isSubmitting ? (
+                                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                        ) : (
+                                            <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                        )}
+                                    </button>
+                                </form>
+                            </>
                         )}
 
                         <p className="text-white/70 text-xs mt-3" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>

@@ -1,5 +1,6 @@
-import { X } from 'lucide-react';
+import { X, CheckCircle, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
+import { WEB3FORMS_CONFIG } from '../config/web3forms';
 
 interface DemoFormProps {
     isOpen: boolean;
@@ -15,12 +16,59 @@ export default function DemoForm({ isOpen, onClose }: DemoFormProps) {
         areaOfInterest: '',
         selectedAgent: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        onClose();
-        setFormData({ firstName: '', lastName: '', email: '', phone: '', areaOfInterest: '', selectedAgent: '' });
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch(WEB3FORMS_CONFIG.API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_CONFIG.DEMO_FORM_ACCESS_KEY,
+                    subject: 'Demo Booking Request - Beta Hub',
+                    from_name: `${formData.firstName} ${formData.lastName}`,
+                    from_email: formData.email,
+                    phone: formData.phone,
+                    area_of_interest: formData.areaOfInterest,
+                    selected_agent: formData.selectedAgent,
+                    message: `Demo Booking Request:
+                    
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Area of Interest: ${formData.areaOfInterest}
+${formData.areaOfInterest === 'agent' ? `Selected Agent: ${formData.selectedAgent}` : ''}
+
+This is a demo booking request from the Beta Hub website.`,
+                    replyto: formData.email,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({ firstName: '', lastName: '', email: '', phone: '', areaOfInterest: '', selectedAgent: '' });
+                setTimeout(() => {
+                    onClose();
+                    setSubmitStatus('idle');
+                }, 2000);
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (!isOpen) return null;
@@ -143,20 +191,44 @@ export default function DemoForm({ isOpen, onClose }: DemoFormProps) {
                         )}
                     </div>
 
+                    {/* Status Messages */}
+                    {submitStatus === 'success' && (
+                        <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3">
+                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                            <p className="text-green-800 font-medium">Demo request submitted successfully! We'll contact you soon.</p>
+                        </div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3">
+                            <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                            <p className="text-red-800 font-medium">Failed to submit demo request. Please try again or contact us directly.</p>
+                        </div>
+                    )}
+
                     <div className="flex gap-4 pt-4">
                         <button
                             type="button"
                             onClick={onClose}
-                            className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer"
+                            disabled={isSubmitting}
+                            className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             Cancel
                         </button>
                         <button
                             type="submit"
-                            className="flex-1 px-6 py-3 text-white rounded-xl font-semibold hover:opacity-90 transition-all cursor-pointer"
+                            disabled={isSubmitting}
+                            className="flex-1 px-6 py-3 text-white rounded-xl font-semibold hover:opacity-90 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             style={{ background: 'linear-gradient(135deg, #3c1470 0%, #5a2a8a 100%)' }}
                         >
-                            Book Demo
+                            {isSubmitting ? (
+                                <>
+                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                    Submitting...
+                                </>
+                            ) : (
+                                'Book Demo'
+                            )}
                         </button>
                     </div>
                 </form>

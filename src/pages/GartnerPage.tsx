@@ -33,39 +33,39 @@ const GartnerPage: React.FC = () => {
 
     const teamMembers = [
         {
-            name: "Manish Singh",
-            role: "Founder & CEO",
+            name: "Manish",
+            role: "Founder",
             expertise: "AI Strategy & Leadership",
             image: "/team/manish.webp",
             linkedin: "#"
         },
         {
-            name: "Morten Vinge-Maigaard",
-            role: "Head of Sales",
+            name: "Morten",
+            role: "Head of Global Sales",
             expertise: "Enterprise Solutions",
             image: "/team/morten.webp",
             linkedin: "https://www.linkedin.com/in/mortenvingemaigaard/"
         },
         {
-            name: "Kruthik Ramachandar",
-            role: "Sales Lead",
+            name: "Kruthik",
+            role: "Sales Lead, India & ME",
             expertise: "Client Relations",
             image: "/team/kruthik.webp",
             linkedin: "https://www.linkedin.com/in/kruthik-ramachandrachar-1044992/"
         },
         {
-            name: "Paras Lokhande",
-            role: "Customer Head",
-            expertise: "Technical Implementation",
-            image: "/team/paras.webp",
-            linkedin: "https://www.linkedin.com/in/paras-lokhande-4121b593/"
-        },
-        {
-            name: "Susanne Gallo Ravn",
-            role: "Sales Director",
+            name: "Susanne",
+            role: "Sales Lead, Europe",
             expertise: "Market Development",
             image: "/team/Sussane.webp",
             linkedin: "https://www.linkedin.com/in/susanne-j-gall%C3%B8-ravn-332b406b/"
+        },
+        {
+            name: "Paras",
+            role: "Solutions Specialist",
+            expertise: "Technical Implementation",
+            image: "/team/paras.webp",
+            linkedin: "https://www.linkedin.com/in/paras-lokhande-4121b593/"
         }
     ];
 
@@ -357,7 +357,7 @@ const GartnerPage: React.FC = () => {
                                             <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                                         </div>
                                         <div>
-                                            <div className="font-semibold text-sm sm:text-base" style={{ color: '#343f52' }}>Tuesday, November 11</div>
+                                            <div className="font-semibold text-sm sm:text-base" style={{ color: '#343f52' }}>Tuesday, November 12</div>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-3">
@@ -366,7 +366,7 @@ const GartnerPage: React.FC = () => {
                                         </div>
                                         <div>
                                             <div className="font-semibold text-sm sm:text-base" style={{ color: '#343f52' }}>3:00 PM - 3:30 PM CET</div>
-                                            <div className="text-xs sm:text-sm text-gray-500">7:30 PM - 8:00 PM IST</div>
+                                            {/* <div className="text-xs sm:text-sm text-gray-500">7:30 PM - 8:00 PM IST</div> */}
                                         </div>
                                     </div>
                                 </div>
