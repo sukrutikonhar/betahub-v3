@@ -109,95 +109,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Contact Options Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                        {/* Contact Sales */}
-                        <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
-                                <Phone className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Contact Sales</h3>
-                            <p className="text-sm mb-6" style={{ color: '#60697b' }}>
-                                Provide your contact info and a sales representative will reach out to you shortly.
-                            </p>
-                            <button
-                                onClick={() => window.location.href = 'mailto:sales@betahub.com'}
-                                className="w-full text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 shadow-lg hover:opacity-90 cursor-pointer"
-                                style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
-                            >
-                                Contact Sales
-                            </button>
-                        </div>
 
-                        {/* Watch Product Tour */}
-                        <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
-                                <ArrowRight className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Watch Product Tour</h3>
-                            <p className="text-sm mb-6" style={{ color: '#60697b' }}>
-                                Experience the many capabilities of Beta Hub's AI agent platform in our product tour.
-                            </p>
-                            <button
-                                onClick={() => window.location.href = '/agents'}
-                                className="w-full border-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
-                                style={{ borderColor: '#DA2CC3', color: '#DA2CC3' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)';
-                                    e.currentTarget.style.color = 'white';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = 'transparent';
-                                    e.currentTarget.style.color = '#DA2CC3';
-                                }}
-                            >
-                                Watch Product Tour
-                            </button>
-                        </div>
-
-                        {/* Book a Demo */}
-                        <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
-                                <Clock className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Book a Demo</h3>
-                            <p className="text-sm mb-6" style={{ color: '#60697b' }}>
-                                Schedule a personalized demo to learn more about Beta Hub AI agents.
-                            </p>
-                            <button
-                                onClick={() => setShowDemoForm(true)}
-                                className="w-full text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 shadow-lg hover:opacity-90 cursor-pointer"
-                                style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
-                            >
-                                Book a Demo
-                            </button>
-                        </div>
-
-                        {/* Get Support */}
-                        <div className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}>
-                                <Mail className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4" style={{ color: '#343f52' }}>Get Support</h3>
-                            <p className="text-sm mb-6" style={{ color: '#60697b' }}>
-                                Email our Support Team to request additional customizations or to resolve issues.
-                            </p>
-                            <button
-                                onClick={() => window.location.href = 'mailto:support@betahub.com'}
-                                className="w-full border-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
-                                style={{ borderColor: '#DA2CC3', color: '#DA2CC3' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)';
-                                    e.currentTarget.style.color = 'white';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = 'transparent';
-                                    e.currentTarget.style.color = '#DA2CC3';
-                                }}
-                            >
-                                Get Support
-                            </button>
-                        </div>
-                    </div>
 
                     {/* Contact Form */}
                     <div className="max-w-4xl mx-auto mb-16">
@@ -381,7 +293,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* CTA Block */}
-                <div className="max-w-5xl mx-auto mt-16">
+                <div className="max-w-5xl mx-auto mb-16">
                     <div className="rounded-3xl p-12 text-center relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
                         {/* Background decorative elements */}
                         <div className="absolute inset-0 overflow-hidden">
@@ -409,7 +321,7 @@ export default function ContactPage() {
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                                 </button>
                                 <button
-                                    onClick={() => window.location.href = 'mailto:sales@betahub.com'}
+                                    onClick={() => window.location.href = 'mailto:info@betahub.ai'}
                                     className="group border-2 border-white text-white px-10 py-3 rounded-xl font-semibold hover:bg-white hover:text-purple-700 transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 min-w-[200px] justify-center cursor-pointer"
                                 >
                                     <span>Contact Sales</span>

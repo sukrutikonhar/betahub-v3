@@ -206,6 +206,16 @@ export default function PricingPage() {
                 </div>
             </section>
 
+            {/* Top-up Notice */}
+            <section className="w-full bg-gray-50 py-12">
+                <div className="section-container">
+                    <div className="text-center">
+                        <p className="text-lg text-gray-600 font-medium">
+                            Easily top up your account with more credits anytime.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             {/* CTA Section */}
             <section className="w-full relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
