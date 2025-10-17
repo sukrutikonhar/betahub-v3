@@ -24,6 +24,12 @@ export const seoConfig: Record<string, PageSEO> = {
     keywords: "AI agents, ProcessFlow AI, TestForge AI, SkillForgeX, CodeDocIQ, RetrievX, HelpDeskX, ResolvIQ, FinOptima IQ, Fit-Gap AI, Config AI, workflow automation, QA automation, training agents, documentation agents",
     ogImage: "https://betahub.ai/logos/logo-dark.webp",
   },
+  "/pricing": {
+    title: "Pricing - Beta Hub AI Agents | Simple, Transparent Pricing Plans",
+    description: "Choose the perfect Beta Hub plan for your enterprise AI journey. Starter ($5), Growth ($50), Enterprise (Custom), and Custom solutions. Scale as you grow with flexible pricing, credit rollover, and dedicated support.",
+    keywords: "Beta Hub pricing, AI agent pricing, enterprise AI cost, AI credits pricing, AI agent plans, pricing tiers, custom AI solutions, enterprise AI pricing, AI agent subscription",
+    ogImage: "https://betahub.ai/logos/logo-dark.webp",
+  },
   "/contact": {
     title: "Contact Beta Hub - Get Started with AI Transformation Today",
     description: "Ready to transform your enterprise with AI? Contact Beta Hub for a personalized consultation. Book a demo, schedule a call, or reach out to our team of AI experts. Let's turn your AI vision into measurable results.",

@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
 import AgentsPage from '../pages/AgentsPage';
+import PricingPage from '../pages/PricingPage';
 import ContactPage from '../pages/ContactPage';
 import GartnerPage from '../pages/GartnerPage';
 import PrivacyPolicyPage from '../pages/PrivacyPolicyPage';
@@ -27,6 +28,10 @@ export const appRouter = createBrowserRouter([
       {
         path: 'agents',
         element: <AgentsPage />,
+      },
+      {
+        path: 'pricing',
+        element: <PricingPage />,
       },
       {
         path: 'contact',

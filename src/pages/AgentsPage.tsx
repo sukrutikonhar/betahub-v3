@@ -4,11 +4,11 @@ import DemoForm from '../components/DemoForm';
 import SEO from '../components/SEO';
 import { getSEOConfig } from '../config/seoConfig';
 import ReadingProgress from '../components/ReadingProgress';
-import agentBgImage from '../assets/agent-bg-2.webp';
+import agentBgImage from '../assets/banner/agent-bg-2.webp';
+import commonBgImage from '../assets/banner/comon-bg.webp';
 
 export default function AgentsPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [selectedIndustries, setSelectedIndustries] = useState<string[]>([]);
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const [showDemoForm, setShowDemoForm] = useState(false);
   const seoData = getSEOConfig('/agents');
@@ -141,7 +141,6 @@ export default function AgentsPage() {
 
   // Get unique categories, industries, and teams for filters
   const allCategories = Array.from(new Set(agents.map(agent => agent.category)));
-  const allIndustries = Array.from(new Set(agents.flatMap(agent => agent.industries)));
   const allTeams = Array.from(new Set(agents.flatMap(agent => agent.teams)));
 
   // Helper functions for checkbox handling
@@ -153,13 +152,6 @@ export default function AgentsPage() {
     }
   };
 
-  const handleIndustryChange = (industry: string, checked: boolean) => {
-    if (checked) {
-      setSelectedIndustries([...selectedIndustries, industry]);
-    } else {
-      setSelectedIndustries(selectedIndustries.filter(i => i !== industry));
-    }
-  };
 
   const handleTeamChange = (team: string, checked: boolean) => {
     if (checked) {
@@ -172,9 +164,8 @@ export default function AgentsPage() {
   // Filter agents based on selected filters
   const filteredAgents = agents.filter(agent => {
     const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(agent.category);
-    const industryMatch = selectedIndustries.length === 0 || agent.industries.some(industry => selectedIndustries.includes(industry));
     const teamMatch = selectedTeams.length === 0 || agent.teams.some(team => selectedTeams.includes(team));
-    return categoryMatch && industryMatch && teamMatch;
+    return categoryMatch && teamMatch;
   });
 
   return (
@@ -186,7 +177,7 @@ export default function AgentsPage() {
         ogImage={seoData.ogImage}
       />
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #E8CAF7 0%, #F0D7F9 20%, #F8E4FC 40%, #FCF0FF 60%, #FEF8FF 80%, #FFFFFF 100%)' }}>
+      <section className="w-full relative overflow-hidden" style={{ backgroundImage: `url(${commonBgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="section-container section-padding">
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
@@ -196,31 +187,18 @@ export default function AgentsPage() {
               <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #743CAC 0%, #5a2a8a 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}> real results</span>
             </h1>
 
-            <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-gray-800 mb-12 max-w-5xl mx-auto leading-relaxed">
               Each agent is designed to solve specific business challenges. Explore our catalog, pick the agents that match your needs, and configure them to work the way you do.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button
-                onClick={() => {
-                  const agentSection = document.getElementById('agent-listing');
-                  if (agentSection) {
-                    agentSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="group text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 hover:opacity-90 cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
-              >
-                <span>Explore Agents</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
-              <button
                 onClick={() => setShowDemoForm(true)}
-                className="group border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 hover:opacity-90 cursor-pointer"
+                className="group relative px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 cursor-pointer border-2 border-purple-600 hover:border-purple-700"
               >
-                <span>Book a Demo</span>
-                <Bot className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                <span className="text-purple-600 group-hover:text-purple-700 transition-colors duration-300">Book a Demo</span>
+                <Bot className="w-5 h-5 text-purple-600 group-hover:text-purple-700 group-hover:scale-110 transition-all duration-300" />
               </button>
             </div>
           </div>
@@ -254,23 +232,6 @@ export default function AgentsPage() {
                   </div>
                 </div>
 
-                {/* Industry Filter */}
-                <div className="mb-8">
-                  <h4 className="text-sm font-medium text-gray-700 mb-4">By Industry</h4>
-                  <div className="space-y-2 max-h-64 overflow-y-auto">
-                    {allIndustries.map((industry) => (
-                      <label key={industry} className="flex items-center cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={selectedIndustries.includes(industry)}
-                          onChange={(e) => handleIndustryChange(industry, e.target.checked)}
-                          className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
-                        />
-                        <span className="ml-3 text-sm text-gray-700">{industry}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Team Filter */}
                 <div className="mb-8">
@@ -291,11 +252,10 @@ export default function AgentsPage() {
                 </div>
 
                 {/* Clear Filters */}
-                {(selectedCategories.length > 0 || selectedIndustries.length > 0 || selectedTeams.length > 0) && (
+                {(selectedCategories.length > 0 || selectedTeams.length > 0) && (
                   <button
                     onClick={() => {
                       setSelectedCategories([]);
-                      setSelectedIndustries([]);
                       setSelectedTeams([]);
                     }}
                     className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-gray-800 transition-colors border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer"
@@ -362,7 +322,6 @@ export default function AgentsPage() {
                   <button
                     onClick={() => {
                       setSelectedCategories([]);
-                      setSelectedIndustries([]);
                       setSelectedTeams([]);
                     }}
                     className="mt-4 text-purple-600 hover:text-purple-700 font-medium"
@@ -390,20 +349,18 @@ export default function AgentsPage() {
 
               <div className="relative z-10">
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 px-20">
-                  Can't find the AI agent template you need?
+                  Can't find the agent you need?
                 </h2>
                 <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-                  Beta Hub has pre-built 'General Problem Solvers' that can help any business with routine repetitive tasks. Looking for something more specific? Contact us to build custom agents.
+                  We can help you build the perfect agent for your needs.
                 </p>
 
                 <div className="flex justify-center items-center">
                   <button
                     onClick={() => window.location.href = '/contact'}
-                    className="group text-white px-10 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 min-w-[200px] justify-center cursor-pointer"
-                    style={{ background: 'linear-gradient(135deg, #DA2CC3 0%, #A022CB 50%, #7B1BF1 100%)' }}
+                    className="group bg-white text-gray-900 px-10 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 min-w-[200px] justify-center cursor-pointer hover:bg-gray-50"
                   >
                     <span>Contact Sales</span>
-                    <Bot className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                   </button>
                 </div>
               </div>

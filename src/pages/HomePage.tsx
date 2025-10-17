@@ -8,8 +8,8 @@ import DemoForm from '../components/DemoForm';
 import SEO from '../components/SEO';
 import { getSEOConfig } from '../config/seoConfig';
 import ReadingProgress from '../components/ReadingProgress';
-import backgroundImage from '../assets/background.png';
-import agentBgImage from '../assets/agent-bg-3.webp';
+import backgroundImage from '../assets/banner/background.png';
+import agentBgImage from '../assets/banner/agent-bg-3.webp';
 
 export default function HomePage() {
     const [activeCategory, setActiveCategory] = useState('core');
@@ -372,7 +372,7 @@ export default function HomePage() {
                             {/* Feature 1 */}
                             <div className="group p-6 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1" style={{ boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.35) 0px 5px 15px'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                                         <Building2 className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
@@ -386,7 +386,7 @@ export default function HomePage() {
                             {/* Feature 2 */}
                             <div className="group p-6 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1" style={{ boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.35) 0px 5px 15px'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                                         <Rocket className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
@@ -721,7 +721,10 @@ export default function HomePage() {
 
                     {/* Sleek CTA Section */}
                     <div className="text-center pt-20">
-                        <div className="relative inline-block group">
+                        <p className="text-gray-500 text-base max-w-2xl mx-auto leading-relaxed">
+                            Ready to transform your enterprise with AI? Schedule a personalized demo and see how our agents can accelerate your business.
+                        </p>
+                        <div className="relative inline-block group mt-6">
                             {/* Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/40 to-pink-500/40 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
 
@@ -744,9 +747,7 @@ export default function HomePage() {
                             </button>
                         </div>
 
-                        <p className="text-gray-500 text-base mt-6 max-w-2xl mx-auto leading-relaxed">
-                            Ready to transform your enterprise with AI? Schedule a personalized demo and see how our agents can accelerate your business.
-                        </p>
+
                     </div>
                 </div>
             </section>

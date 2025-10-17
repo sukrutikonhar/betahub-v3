@@ -17,6 +17,7 @@ export default function Header({ bannerVisible = false }: { bannerVisible?: bool
         { path: ROUTES.HOME, label: ROUTE_LABELS[ROUTES.HOME] },
         { path: ROUTES.ABOUT, label: ROUTE_LABELS[ROUTES.ABOUT] },
         { path: ROUTES.AGENTS, label: ROUTE_LABELS[ROUTES.AGENTS] },
+        { path: ROUTES.PRICING, label: ROUTE_LABELS[ROUTES.PRICING] },
         { path: ROUTES.CONTACT, label: ROUTE_LABELS[ROUTES.CONTACT] },
     ];
 
@@ -136,8 +137,8 @@ export default function Header({ bannerVisible = false }: { bannerVisible?: bool
                                     key={path}
                                     to={path}
                                     className={`px-6 py-3 font-medium transition-colors duration-200 ${isActive(path)
-                                            ? "text-muted-purple bg-purple-50"
-                                            : "text-dark-gray hover:text-core-purple hover:bg-gray-50"
+                                        ? "text-muted-purple bg-purple-50"
+                                        : "text-dark-gray hover:text-core-purple hover:bg-gray-50"
                                         }`}
                                 >
                                     {label}

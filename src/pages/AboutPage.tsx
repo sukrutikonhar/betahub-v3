@@ -5,6 +5,7 @@ import DemoForm from '../components/DemoForm';
 import SEO from '../components/SEO';
 import { getSEOConfig } from '../config/seoConfig';
 import ReadingProgress from '../components/ReadingProgress';
+import commonBgImage from '../assets/banner/comon-bg.webp';
 
 export default function AboutPage() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function AboutPage() {
       role: "Founder",
       image: "https://arreglio.com/images/team/manish.webp",
       linkedin: "https://www.linkedin.com/in/manish-singh-753b1811/",
-      description: "Manish is a seasoned technology leader and co-founder of Beta Hub, known for his Microsoft expertise and leadership par excellence. With a career spanning global enterprises like Scania, KPMG, and Microsoft's partner ecosystem, he has led large-scale Dynamics 365 implementations, built Centers of Excellence, and spearheaded data-driven transformation across industries. A passionate advocate for AI-driven innovation, Manish co-founded Beta Hub to integrate cutting-edge AI into solving real business problems, transforming enterprise operations, accelerating digital adoption, and creating measurable impact. His leadership combines strategic vision, deep domain expertise, and relentless passion for AI, making him a driving force behind Beta Hub's mission to reshape the future of enterprise technology.",
+      description: "A passionate advocate for AI innovation, Manish co-founded Beta Hub to help enterprises harness cutting-edge AI for real business impact, accelerating digital adoption, transforming operations, and delivering measurable outcomes. His strategic vision, technical depth, and relentless drive make him a leading force shaping the future of enterprise technology.",
       expertise: "Enterprise Leadership & AI Innovation"
     },
     {
@@ -24,7 +25,7 @@ export default function AboutPage() {
       role: "Co-Founder",
       image: "https://arreglio.com/images/team/sudhie.webp",
       linkedin: "https://www.linkedin.com/in/sudhiesiddautam/",
-      description: "Sudhiendra is a visionary technology entrepreneur and co-founder of Beta Hub, where he is building the future of enterprise AI with autonomous agent platforms. With a career spanning nearly two decades at Microsoft, Amazon, ecoPRISM, and Veridion AI, he has led the architecture of mission-critical systems from Azure Identity and Dynamics CRM Online to Amazon's last-mile delivery optimization - impacting millions worldwide. Renowned for his mastery of agentic AI, generative AI, and enterprise SaaS, Sudhiendra combines deep technical expertise with business acumen, turning advanced technology into measurable impact. At Beta Hub, he is driving a bold vision: to create intelligent, scalable AI systems that redefine how enterprises transform, compete, and grow.",
+      description: "Renowned for his expertise in agentic AI, generative AI, and enterprise SaaS, Sudhie blends deep technical mastery with business insight to turn innovation into measurable impact. At Beta Hub, he’s driving the creation of intelligent, scalable AI systems that transform how enterprises compete and grow.",
       expertise: "Agentic AI & Enterprise Architecture"
     }
   ];
@@ -57,7 +58,7 @@ export default function AboutPage() {
         ogImage={seoData.ogImage}
       />
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #E8CAF7 0%, #F0D7F9 20%, #F8E4FC 40%, #FCF0FF 60%, #FEF8FF 80%, #FFFFFF 100%)' }}>
+      <section className="w-full relative overflow-hidden" style={{ backgroundImage: `url(${commonBgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="section-container section-padding">
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
